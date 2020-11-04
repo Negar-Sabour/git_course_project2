@@ -1,0 +1,163 @@
+________________________________part1:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git
+$ cd project1/
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1
+$ git init
+Initialized empty Git repository in C:/Users/negsa/Desktop/git/project1/.git/
+________________________________part2:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git config --local user.name "Negar"
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git config --local user.email "nr.sabour@yahoo.com"
+________________________________part4:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+________________________________part5:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git add test.py
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.py
+
+________________________________part6_a:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.py
+
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git add test.py
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.py
+________________________________part6_b:__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        DFS_visit.py
+
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git add DFS_visit.py
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   DFS_visit.py
+        new file:   test.py
+
+________________________________part7-a(changes for entire directory):__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git diff
+diff --git a/DFS_visit.py b/DFS_visit.py
+index b567bdf..e5a6ad3 100644
+--- a/DFS_visit.py
++++ b/DFS_visit.py
+@@ -1,11 +1,11 @@
+ def DFS_visit(node,colorsDic,colors,pre,G):
++    #function defenition
+     colors[node] = colorsDic["gray"]
+     for adjNode in G[node]:
+         if colors[adjNode] == colorsDic["white"]:
+             pre [adjNode] = node
+             (a,b) = DFS_visit(adjNode,colorsDic,colors,pre,G)
+-           # print("return value for" +str((node, adjNode))+"is    :  "+ str((a,b)))
+-            if (a,b) != (-1,-1):
++        if (a,b) != (-1,-1):
+                 return (a,b)
+         elif colors[adjNode] == colorsDic["gray"]:
+             return (node,adjNode)
+diff --git a/test.py b/test.py
+index 67b4822..aa3e922 100644
+--- a/test.py
++++ b/test.py
+@@ -1,9 +1,9 @@
+
+ def f2():
+-    #f2 description
++    #function f2 defenition
+     print(a[0])
+
+
+ def f1():
+     a=[1,2,3]
+-    f2()
+\ No newline at end of file
++    f2()
+
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+
+
+
+
+________________________________part7-b(changes for specific file):__________________________________________
+negsa@DESKTOP-3VIT1B5 MINGW64 ~/Desktop/git/project1 (master)
+$ git diff test.py
+diff --git a/test.py b/test.py
+index 67b4822..aa3e922 100644
+--- a/test.py
++++ b/test.py
+@@ -1,9 +1,9 @@
+
+ def f2():
+-    #f2 description
++    #function f2 defenition
+     print(a[0])
+
+
+ def f1():
+     a=[1,2,3]
+-    f2()
+\ No newline at end of file
++    f2()
+
