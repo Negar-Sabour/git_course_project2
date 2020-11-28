@@ -1,4 +1,5 @@
 
+#comment for f2
 def f2():
     #function f2 defenition
     print(a[0])
