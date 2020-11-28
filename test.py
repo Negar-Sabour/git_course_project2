@@ -1,10 +1,10 @@
 
-#comment for f2
-def f2():
-    #function f2 defenition
+#comment for f1
+def f1():
+    #function f1 defenition
     print(a[0])
 
 
-def f1():
-    a=[1,2,3]
+def f2():
+    b = [1,2,3]
     f2()
