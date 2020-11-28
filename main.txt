@@ -1,5 +1,5 @@
 line 1 edited
 line 2 Hi edited
-line 3
+line 3 edited
 line 4
 Line 5 
